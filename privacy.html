@@ -10,7 +10,7 @@
 <main>
   <header><small>Household Reminders</small><h1>Privacy Policy</h1></header>
   <section>
-    <p class="muted">Effective October 25, 2026</p>
+    <p class="muted">Effective November 7, 2026</p>
     <p>Household Reminders is a private app used only by the members of one household. This policy explains what it accesses and what it does with it.</p>
   </section>
   <section>
@@ -26,7 +26,7 @@
     <h2>How it is used and stored</h2>
     <p>The dashboard is reached through Cloudflare, which carries the encrypted connection to the household's computer.</p>
     <p>This information is used only to keep the household's shared to-do list and each member's "Household" task list in sync. It is stored on the household's own computer. Sign-in tokens are kept in a private file on that computer.</p>
-    <p>The app does not sell, share or transfer this information to anyone, does not show ads, and does not use it for any other purpose. Free text from emails may be processed by an AI model (Anthropic's Claude) solely to turn a member's message into list changes.</p>
+    <p>The app does not sell, share or transfer this information to anyone, does not show ads, and does not use it for any other purpose. Free text from emails may be processed by an AI model (Anthropic's Claude, through the household's Claude subscription or, when that is busy, Anthropic's API under the same terms) solely to turn a member's message into list changes, a member's book titles, star ratings, short reviews and current reading are sent to Claude solely to suggest books for that member, and the library's book titles and authors are sent to Claude to sort them into categories. A photo of a book's cover or of a shelf, when used to add books, is sent to Claude only to read the titles and authors, and deleted right after. To pick the day's top news, public news headlines from news feeds (and which stories members marked interesting or not) are sent to Claude; nothing else about the household is included.</p>
     <p>Household Reminders' use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
   </section>
   <section>
@@ -35,11 +35,37 @@
   </section>
   <section>
     <h2>Library</h2>
-    <p>To show book details and covers, the app looks books up on Open Library by ISBN or title (no personal information is sent), and the dashboard loads cover images from Open Library and the Internet Archive.</p>
+    <p>To show book details and covers, the app looks books up on Open Library by ISBN or title (no personal information is sent), and the dashboard loads cover images from Open Library and the Internet Archive. When Open Library is missing a cover or description, the ISBN may also be looked up on Google Books, and choosing a new cover searches Apple Books by title and author. A cover photo you upload is stored with the household's data and shown only to signed-in members.</p>
+    <p>Scanning a barcode uses your phone's camera only while the scanner is open. The barcode is read on your phone; no video or photo leaves it, only the ISBN it finds.</p>
   </section>
   <section>
     <h2>Weather</h2>
     <p>To show the weather, the app sends the household's approximate location (city-level coordinates, no names or accounts) to Open-Meteo, a free weather service.</p>
+  </section>
+  <section>
+    <h2>Drive to work</h2>
+    <p>If you enter a work address, it and the household's home address are turned into map coordinates once, when saved, by OpenStreetMap's free address search. On work days, the morning job sends only those two sets of coordinates and your usual leaving time to TomTom to estimate the drive and find incidents on the route; no names, accounts or other household data. Only you see your work address, and you can remove it in Settings at any time.</p>
+  </section>
+  <section>
+    <h2>Phone notifications</h2>
+    <p>If you turn on notifications on a device, the app stores that device's notification address and sends short alerts (a task's title, a highlight's title, a badge) through the phone or browser maker's own push service (Apple, Google, Mozilla or Microsoft), encrypted so that the service can't read them. Turning them off, signing out on that device, or leaving the household deletes it. A nudge from another member is one of these alerts: it is sent only if you have nudges turned on and you're not in your quiet hours, and the household sees that it was sent.</p>
+  </section>
+  <section>
+    <h2>Gym</h2>
+    <p>Each person's training plan (the week, weights and reps logged, lift history, records, past weeks, body weight entered and measurements) is stored with the household's data and visible to everyone in the household; only its owner can change it. Progress photos are stored the same way but shown only to their owner, unless the owner turns on sharing in Settings. Deleting a photo removes it. The Sunday recap email and the timeline show each person's sessions done, streak and which lifts got a new record, never weights, measurements or photos.</p>
+
+    <h2>Shopping list, groceries and what's new</h2>
+    <p>Things added to the shopping list (title, who it's for, a rough price, a product link, notes and what it cost) are shared with everyone in the household and stored with the household's list. The store links are plain searches built from the title; the app never visits the stores or fetches prices. The grocery list (each item, its aisle, a short note, who added it and who ticked it off) is shared with everyone in the household too; finished trips (what was bought and who finished the trip) are kept for about four months, to show past trips and suggest the things you buy often (and when they're probably running low), then deleted. If you choose Not now or Stop suggesting on a suggestion, that choice is kept with the list. To show what's new since your last visit, the app stores the time you last had it open. Changes made in the app (a task done, a grocery trip, a light turned off) are shown on the household's timeline with who made them, and kept with the household's data.</p>
+  </section>
+  <section>
+    <h2>Smart home and the Frame TV</h2>
+    <p>The app shows and controls only the home devices the household has chosen to share with it (lights, plugs, the thermostat, speakers, sensors), through the household's own Home Assistant, which runs on the same computer at home. Device names, rooms and states are read when the page is open and not stored; each change made from the app is recorded on the timeline. To tell whether anyone is home, the app checks Home Assistant's at-home status for the household's people at that moment; locations are not read or kept.</p>
+    <p>When a speaker is playing, the app fetches the album art for it from Home Assistant (or from the music service's own picture address) and shows it to signed-in members; it is kept only briefly in memory, not stored.</p>
+    <p>Photos added to the Frame TV are sent from your phone to the household's computer and on to the TV over the home network; the copy on the computer is deleted once the TV has it. Small previews of the photos on the TV are kept on the household's computer so the page loads quickly, and are shown only to signed-in members. Removing a photo from the TV deletes its preview.</p>
+  </section>
+  <section>
+    <h2>Uptime check</h2>
+    <p>An outside monitoring service (UptimeRobot) checks every few minutes that the app is answering. It only receives a yes or no and the app's version, never any household information.</p>
   </section>
   <section>
     <h2>Removing access</h2>
